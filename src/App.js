@@ -1,7 +1,10 @@
 import './App.css';
 import { useState } from 'react';
 import tenor from './assets/tenor.gif';
+import giphy from './assets/giphy.gif';
+
 function App() {
+  const [yes, setYes] = useState(false);
   const [left, setLeft] = useState();
   const [top, setTop] = useState();
 
@@ -18,14 +21,16 @@ function App() {
     setTop(j);
   }
   
-  
+  const onClickYes = () => {
+    setYes(true);
+  }
   return (
     <div className="App">
       
         <h2>Do you wanna go out with me?</h2>
-        <img src={tenor} alt='' className='App-logo'/>
-        <div className='btn-group'>
-          <button className='btn-yes'>Yes</button>
+        {yes ? <img src={giphy} alt='' className='App-logo'/> : <img src={tenor} alt='' className='App-logo'/>}
+        {!yes && <div className='btn-group'>
+          <button className='btn-yes' onClick={onClickYes}>Yes</button>
           <button className='btn-no'
             onMouseOver={handleHover}
             onTouchStart={handleHover}
@@ -33,7 +38,7 @@ function App() {
                left: `${left}px`, top: `${top}px`
             }}
           >No</button>
-      </div>
+      </div>}
       
     </div>
   );
