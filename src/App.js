@@ -39,7 +39,7 @@ function App() {
             }}
           >No</button>
       </div>}
-      
+      <div className='watermark'>@rushighosalkar | ryuzaki_00</div>
     </div>
   );
 }

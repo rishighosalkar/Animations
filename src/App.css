@@ -78,6 +78,7 @@ button{
     left: 80px; 
   }
 }
+
 .btn-no{
   right: 850px;
   width: 100px;
@@ -88,6 +89,12 @@ button{
   }
 }
 
+.watermark{
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  color: whitesmoke;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
