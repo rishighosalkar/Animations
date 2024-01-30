@@ -25,19 +25,18 @@ function App() {
     setYes(true);
   }
   return (
-    <div className="App">
-      
-        <h2>Do you wanna go out with me?</h2>
-        {yes ? <img src={giphy} alt='' className='App-logo'/> : <img src={tenor} alt='' className='App-logo'/>}
-        {!yes && <div className='btn-group'>
-          <button className='btn-yes' onClick={onClickYes}>Yes</button>
-          <button className='btn-no'
-            onMouseOver={handleHover}
-            onTouchStart={handleHover}
-            style={{
-               left: `${left}px`, top: `${top}px`
-            }}
-          >No</button>
+    <div className="App">    
+      <h2>Do you wanna go out with me?</h2>
+      {yes ? <img src={giphy} alt='' className='App-logo'/> : <img src={tenor} alt='' className='App-logo'/>}
+      {!yes && <div className='btn-group'>
+        <button className='btn-yes' onClick={onClickYes}>Yes</button>
+        <button className='btn-no'
+          onMouseOver={handleHover}
+          onTouchStart={handleHover}
+          style={{
+              left: `${left}px`, top: `${top}px`
+          }}
+        >No</button>
       </div>}
       <div className='watermark'>@rushighosalkar | ryuzaki_00</div>
     </div>
