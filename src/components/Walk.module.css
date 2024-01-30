@@ -1,0 +1,110 @@
+.container-day{
+    height: 100vh;
+    width: 100%;
+    /* background-color: black; */
+    background-image:url(../assets/sky.jpg); 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-night{
+  height: 100vh;
+  width: 100%;
+  /* background-color: black; */
+  background-image:url(../assets/moon.jpg); 
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.button{
+  top: 10px;
+  height: 30px;
+  width: 100px;
+  left: 50%;
+  border-radius: 50px;
+  background-color: aqua;
+  position: fixed;
+  z-index: 1;
+  overflow: hidden;
+}
+  
+.highway{
+    height: 200px;
+    width: 500%;
+    display: block;
+    background-image: url(../assets/road.jpg);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    overflow: hidden;
+    background-repeat: repeat-x;
+    animation: highway 22s linear infinite;
+}
+
+.city{
+  height: 250px;
+  width: 500%;
+  background-image: url(../assets/city.png);
+  position: absolute;
+  bottom: 200px;
+  left: 0;
+  right: 0;
+  display: block;
+  z-index: 1;
+  background-repeat: repeat-x;
+}
+
+.walk{
+  height: 750px;
+  width: 50px;
+  display: block;
+  background-image: url(../assets/walk.png);
+  position: absolute;
+  bottom: -50px;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  overflow-y: hidden;
+  background-repeat:no-repeat;
+  background-size: 300px;
+  /* transform: translateX(-50%); */
+  animation: walk-effect 1s steps(5) infinite,
+            forward-effect 13s linear infinite;
+}
+
+
+.paused{
+    animation-play-state: paused;
+}
+  
+@keyframes walk-effect{
+  0%{
+    background-position: 0px;
+  }
+  100%{
+    background-position: -300px;
+  }
+  
+}
+
+@keyframes highway {
+  100%{
+    transform: translateX(-3400px);
+  }
+}
+
+@keyframes forward-effect{
+  0%{
+    transform: translateX(0px);
+  }
+  100%{
+    transform: translateX(1200px);
+  }
+}
+  
