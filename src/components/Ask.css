@@ -8,6 +8,8 @@
     display: flex;
     justify-content: center;
     background-color: #282c34;
+    position: relative;   /* 🔴 THIS IS THE KEY */
+    overflow: hidden; 
   }
   
   .App-logo {
@@ -62,6 +64,7 @@
   button{
     position: absolute;
     display: flex;
+    align-items: center;       /* ✅ vertical center */
     cursor: pointer;
     margin: 0 10px;
     padding: 10px 30px;
@@ -69,7 +72,7 @@
     border-radius: 20px;
     justify-content: center;
     width: 110px;
-    height: 50px;
+    height: auto;
     font-family: cursive;
     color: #282c34;
     box-shadow: 3px 3px black;
@@ -78,6 +81,8 @@
   .btn-yes{
     left: 740px;
     font-size: calc(10px + 1vmin);
+    min-width: 160px;
+    transition: transform 0.15s ease, width 0.2s ease;
     @media (max-width: 767px) {
       left: 80px; 
     }
@@ -109,3 +114,75 @@
     }
   }
   
+.heart {
+  position: absolute;
+  bottom: -20px;            /* 🔴 start below the screen */
+  width: 16px;
+  height: 16px;
+  background: #ff6b81;
+  transform: rotate(45deg);
+  animation: float 6s linear infinite;
+  opacity: 0.9;
+  z-index: 1;               /* behind content */
+}
+
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #ff6b81;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -8px;
+}
+
+.heart::after {
+  left: -8px;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.question {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.love-text {
+  color: #ffb6c1;
+  font-size: 1.6rem;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.mischief {
+  display: block;
+  margin-top: 8px;
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
