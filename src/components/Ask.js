@@ -8,7 +8,7 @@ function Ask() {
     const [left, setLeft] = useState();
     const [top, setTop] = useState();
     const messages = [
-        "Do you wanna go out with me? 🥺",
+        "Do you wanna go out with me this valentine? 🥺",
         "Are you sure? 🐻",
         "Think again... 💖",
         "I promise I'll make you smile 🌸",
